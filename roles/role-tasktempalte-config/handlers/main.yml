@@ -1,2 +1,8 @@
 ---
 # handlers file for role-tasktempalte-config
+# Handlers section
+
+- name: Restart HTTPD
+  service:
+    name: httpd
+    state: restarted
