@@ -5,4 +5,5 @@
   yum:
     name: httpd
     state: installed
+  become: yes
   
