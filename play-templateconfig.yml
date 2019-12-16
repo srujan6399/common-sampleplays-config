@@ -1,8 +1,19 @@
 ---
 
+#Target section
 - name: Sample Template of Ansible structure
   hosts: "{{ host_name }}"
   gather_facts: true
+  connection: ssh
+
+#Variable Section
+  vars:
+    environment_name: "dev"
+  vars_files:
+  - vars.yml
+  vars_prompt:
+  - name: application_type
+    prompt: application_type
 
   roles:
   - role: role-tasktempalte-config

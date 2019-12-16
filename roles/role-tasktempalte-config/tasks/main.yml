@@ -1,6 +1,6 @@
 ---
 # tasks file for role-tasktempalte-config
-
+# Task Section
 - name: "Install httpd on {{ host_name }}"
   yum:
     name: httpd
