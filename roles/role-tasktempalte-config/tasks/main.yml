@@ -6,6 +6,7 @@
     name: httpd
     state: installed
   become: yes
-  notify: Restart HTTPD
+  notify: 
+  - Restart HTTPD
 
   
