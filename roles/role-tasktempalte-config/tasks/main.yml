@@ -6,4 +6,13 @@
     name: httpd
     state: installed
   become: yes
+  notify: Restart HTTPD
+
+# Handlers section
+handlers:
+- name: Restart HTTPD
+  service:
+    name: httpd
+    state: restarted
+
   
