@@ -1,0 +1,11 @@
+---
+
+- name: Sample Template of Ansible structure
+  hosts: "{{ host_name }}"
+  gather_facts: true
+  connection: ssh
+
+  roles:
+  - role: role-tasktemplate-config
+
+...
