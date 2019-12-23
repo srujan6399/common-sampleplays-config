@@ -8,6 +8,12 @@
 - debug: 
     msg: "{{ date.stdout_lines }}"
 
+- name: Async polling the task - test
+  raw: /bin/sleep 15
+  async: 45
+  poll: 0
+  register: sleep_result
+
 - name: "Install httpd on {{ host_name }}"
   yum:
     name: httpd
@@ -16,4 +22,9 @@
   notify: 
   - Restart HTTPD
 
-  
+- name: STATUS - Async polling the task - test
+  async_status:
+    jid: "{{ sleep_result.ansible_job_id }}"
+  register: job_result
+  until: job_result.finished
+  retries: 10
