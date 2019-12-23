@@ -6,7 +6,7 @@
   raw: /usr/bin/date
   register: date
 - debug: 
-  msg: "{{ date }}"
+    msg: "{{ date }}"
 
 - name: "Install httpd on {{ host_name }}"
   yum:
