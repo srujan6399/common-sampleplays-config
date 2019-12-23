@@ -9,9 +9,9 @@
     msg: "{{ date.stdout_lines }}"
 
 - name: Async polling the task - test
-  command: /bin/sleep 15
+  command: /bin/sleep 25
   async: 45
-  poll: 0
+  poll: 5
   register: sleep_result
 
 - name: "Install httpd on {{ host_name }}"
