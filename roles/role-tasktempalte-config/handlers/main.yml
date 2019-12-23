@@ -2,11 +2,6 @@
 # handlers file for role-tasktempalte-config
 # Handlers section
 
-- name: Date/Time stamp when playbook started
-  raw: /usr/bin/date
-  register: date
-- debug: "{{ date }}"
-
 - name: Restart HTTPD
   service:
     name: httpd

@@ -1,6 +1,12 @@
 ---
 # tasks file for role-tasktempalte-config
 # Task Section
+
+- name: Date/Time stamp when playbook started
+  raw: /usr/bin/date
+  register: date
+- debug: "{{ date }}"
+
 - name: "Install httpd on {{ host_name }}"
   yum:
     name: httpd
