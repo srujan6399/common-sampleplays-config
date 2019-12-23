@@ -30,3 +30,4 @@
   retries: 10
 - debug:
     msg: "{{ lookup('env', 'PATH') }}"
+  when: ansible_os_family == "Redhat"

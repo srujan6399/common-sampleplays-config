@@ -5,6 +5,7 @@
   hosts: "{{ host_name }}"
   gather_facts: true
   connection: ssh
+  # connection: local
 
 #Variable Section
   vars:
