@@ -9,7 +9,7 @@
     msg: "{{ date.stdout_lines }}"
 
 - name: Async polling the task - test
-  raw: /bin/sleep 15
+  command: /bin/sleep 15
   async: 45
   poll: 0
   register: sleep_result
