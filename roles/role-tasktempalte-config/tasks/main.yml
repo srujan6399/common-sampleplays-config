@@ -28,6 +28,7 @@
   register: job_result
   until: job_result.finished
   retries: 10
+  delay: 10
 - debug:
     msg: "{{ lookup('env', 'PATH') }}"
   when: ansible_os_family == "RedHat"
